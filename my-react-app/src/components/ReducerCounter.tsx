@@ -8,7 +8,7 @@ const types = {
     RESET: "reset"
 };
 
-const reducer = (state, action) => {
+const reducer = (state: { count: number; }, action: unknown) => {
     switch (action) {
         case types.INCREMENT:
             return { count: state.count + 1 };
