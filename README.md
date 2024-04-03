@@ -1,4 +1,5 @@
-# packt-state-with-reactquery
+# State Management with React Query
+### (packt-state-with-reactquery)
 
 This is my code, written, while following along with a book titled "State Management with React Query" by Daniel Afonso from Packt Publishing.
 
