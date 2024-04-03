@@ -6,6 +6,14 @@ import Counter from './components/Counter'
 import ReducerCounter from './components/ReducerCounter'
 import { CountContext } from './components/CountContext'
 
+//THIS IS AN EXAMPLE OF WHAT ISN'T VALID STATE DATA
+const NotState = ({ aList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] }) => {
+  const filteredList = aList.filter((item) => item % 2 === 0);
+  const value = "a constant value";
+
+  return filteredList.map((item) => <div key={item}>{item}</div>);
+};
+
 function App() {
   const [defaultCount, setCount] = useState(0)
   const { count, increment, decrement, reset } = useContext(CountContext);
