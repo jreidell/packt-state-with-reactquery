@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Counter from './components/Counter'
+import ReducerCounter from './components/ReducerCounter'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -25,8 +26,13 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
+        <h3>Counter with useState</h3>
         <p>
           <Counter />
+        </p>
+        <h3>Counter with useReducer</h3>
+        <p>
+          <ReducerCounter />
         </p>
       </div>
       <p className="read-the-docs">
