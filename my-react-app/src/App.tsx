@@ -1,12 +1,14 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Counter from './components/Counter'
 import ReducerCounter from './components/ReducerCounter'
+import { CountContext } from './components/CountContext'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [defaultCount, setCount] = useState(0)
+  const { count, increment, decrement, reset } = useContext(CountContext);
 
   return (
     <>
@@ -20,8 +22,8 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button onClick={() => setCount((currentDefaultCount) => currentDefaultCount + 1)}>
+          count is {defaultCount}
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
@@ -34,6 +36,15 @@ function App() {
         <p>
           <ReducerCounter />
         </p>
+        <h3>App With Counter Context</h3>
+        <div className="App">
+          <div>Counter: { count }</div>
+          <div>
+          <button onClick={increment}>+1</button>
+          <button onClick={decrement}>-1</button>
+          <button onClick={reset}>Reset</button>
+          </div>
+        </div>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
